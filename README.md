@@ -1,8 +1,8 @@
-# 🔐 Angular 20 Authentication Guard Tutorial
+#  Angular 20 Authentication Guard Tutorial
 
 A comprehensive Angular 20 application demonstrating **best practices** for implementing authentication guards with **Firebase Authentication**, **Firestore**, and modern Angular patterns including **functional guards**, **signals**, and **zoneless change detection**.
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Features](#-features)
 - [Technologies](#-technologies)
@@ -17,7 +17,7 @@ A comprehensive Angular 20 application demonstrating **best practices** for impl
 - [Best Practices](#-best-practices)
 - [Additional Resources](#-additional-resources)
 
-## ✨ Features
+##  Features
 
 ### Authentication
 - ✅ Email/Password authentication with Firebase
@@ -49,7 +49,7 @@ A comprehensive Angular 20 application demonstrating **best practices** for impl
 - ✅ Form validation
 - ✅ Protected route indicators
 
-## 🛠️ Technologies
+##  Technologies
 
 - **Angular 20.3.8** - Latest Angular with standalone components
 - **Firebase 11.1.0** - Backend-as-a-Service for auth and database
@@ -58,7 +58,7 @@ A comprehensive Angular 20 application demonstrating **best practices** for impl
 - **RxJS 7.8** - Reactive programming
 - **Zoneless Change Detection** - Improved performance
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 auth-guard-tutorial/
@@ -98,7 +98,7 @@ auth-guard-tutorial/
 └── package.json                     # Dependencies
 ```
 
-## 📦 Prerequisites
+##  Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -110,7 +110,7 @@ Before you begin, ensure you have the following installed:
   ```
 - **Firebase Account** - [Sign up](https://firebase.google.com/)
 
-## 🚀 Installation
+##  Installation
 
 ### 1. Clone the Repository
 
@@ -131,7 +131,7 @@ This will install all required packages including:
 - RxJS for reactive programming
 - TypeScript
 
-## 🔥 Firebase Setup
+##  Firebase Setup
 
 ### Step 1: Create a Firebase Project
 
@@ -209,7 +209,7 @@ service cloud.firestore {
 }
 ```
 
-## 🎮 Running the Application
+##  Running the Application
 
 ### Development Server
 
@@ -235,7 +235,7 @@ Build artifacts will be stored in the `dist/` directory.
 ng test
 ```
 
-## 📖 Implementation Guide
+##  Implementation Guide
 
 ### Step 1: Set Up Firebase Authentication Service
 
@@ -536,7 +536,7 @@ export class DashboardComponent {
 }
 ```
 
-## 🔄 Authentication Flow
+##  Authentication Flow
 
 ### Registration Flow
 
@@ -574,7 +574,7 @@ export class DashboardComponent {
 5. User state cleared
 6. Redirected to home page
 
-## 🛡️ Guard Types
+##  Guard Types
 
 ### 1. Authentication Guard (`authGuard`)
 **Purpose:** Ensures user is logged in
@@ -678,7 +678,7 @@ export interface User {
 ✅ **Do:** Use guards only for route protection
 ✅ **Do:** Keep components focused on presentation
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### Angular Documentation
 - [Angular Guards](https://angular.dev/guide/guards)
@@ -715,7 +715,7 @@ ng test
 ng lint
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -725,14 +725,11 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 👤 Author
-
+## Author
 Created as an educational resource for learning Angular authentication and authorization patterns.
 
 ---
-
-**Happy Coding! 🚀**
