@@ -1,0 +1,42 @@
+<div class="admin-container">
+  <nav class="breadcrumb">
+    <a routerLink="/dashboard">Dashboard</a> / <span>Admin Panel</span>
+  </nav>
+
+  <h1>🔧 Admin Panel</h1>
+  <p class="description">
+    This page is only accessible to users with the <code>admin</code> role.
+  </p>
+
+  <div class="admin-cards">
+    <div class="admin-card">
+      <h3>👥 User Management</h3>
+      <p>View and manage all users in the system.</p>
+      <span class="stat">1,234 users</span>
+    </div>
+    <div class="admin-card">
+      <h3>📊 Analytics</h3>
+      <p>View detailed system analytics and reports.</p>
+      <span class="stat">+15% growth</span>
+    </div>
+    <div class="admin-card">
+      <h3>⚙️ System Settings</h3>
+      <p>Configure application-wide settings.</p>
+      <span class="stat">12 settings</span>
+    </div>
+    <div class="admin-card">
+      <h3>📝 Audit Logs</h3>
+      <p>Review all system activity and changes.</p>
+      <span class="stat">5,678 entries</span>
+    </div>
+  </div>
+
+  <div class="guard-info">
+    <h2>Guard Configuration</h2>
+    <pre><code>{{ guardCode }}</code></pre>
+  </div>
+
+  <div class="actions">
+    <a routerLink="/dashboard" class="btn">← Back to Dashboard</a>
+  </div>
+</div>

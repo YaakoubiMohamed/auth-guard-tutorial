@@ -1,0 +1,61 @@
+<div class="settings-container">
+  <nav class="breadcrumb">
+    <a routerLink="/dashboard">Dashboard</a> / <span>Settings</span>
+  </nav>
+
+  <h1>⚙️ Settings</h1>
+  <p class="description">
+    This page requires the <code>write</code> permission to access.
+  </p>
+
+  <div class="settings-sections">
+    <section class="settings-section">
+      <h2>General Settings</h2>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" checked />
+          Enable notifications
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" />
+          Dark mode
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>Language</label>
+        <select>
+          <option>English</option>
+          <option>Spanish</option>
+          <option>French</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Privacy Settings</h2>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" checked />
+          Show profile publicly
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" checked />
+          Allow direct messages
+        </label>
+      </div>
+    </section>
+  </div>
+
+  <div class="guard-info">
+    <h2>Guard Configuration</h2>
+    <pre><code>{{ guardCode }}</code></pre>
+  </div>
+
+  <div class="actions">
+    <a routerLink="/dashboard" class="btn">← Back to Dashboard</a>
+  </div>
+</div>

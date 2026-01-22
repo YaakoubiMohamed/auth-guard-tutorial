@@ -1,0 +1,27 @@
+<div class="unauthorized-container">
+  <div class="content">
+    <div class="icon">🚫</div>
+    <h1>Access Denied</h1>
+    <p class="message">
+      Sorry, you don't have permission to access this page.
+      Please contact an administrator if you believe this is a mistake.
+    </p>
+
+    @if (authService.isAuthenticated()) {
+      <div class="user-info">
+        <p>Logged in as: <strong>{{ authService.user()?.email }}</strong></p>
+        <p>
+          Your roles:
+          @for (role of authService.userRoles(); track role) {
+            <span class="role-badge">{{ role }}</span>
+          }
+        </p>
+      </div>
+    }
+
+    <div class="actions">
+      <a routerLink="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+      <button (click)="goBack()" class="btn btn-secondary">Go Back</button>
+    </div>
+  </div>
+</div>

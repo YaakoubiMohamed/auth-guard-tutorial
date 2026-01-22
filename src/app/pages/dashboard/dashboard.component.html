@@ -1,0 +1,102 @@
+<div class="dashboard-container">
+  <header class="header">
+    <div class="logo">🔐 AuthGuard Tutorial</div>
+    <nav>
+      <a routerLink="/" class="nav-link">Home</a>
+      <a routerLink="/profile" class="nav-link">Profile</a>
+      @if (authService.hasRole('admin')) {
+        <a routerLink="/admin" class="nav-link">Admin</a>
+      }
+      @if (authService.hasAnyRole(['admin', 'moderator'])) {
+        <a routerLink="/moderator" class="nav-link">Mod Panel</a>
+      }
+      <button (click)="authService.logout()" class="btn btn-outline">Logout</button>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="welcome">
+      <h1>Welcome, {{ user()?.displayName || 'User' }}! 👋</h1>
+      <p class="subtitle">You're now signed in to the protected dashboard.</p>
+    </div>
+
+    <div class="user-info-card">
+      <h2>Your Profile</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="label">Email</span>
+          <span class="value">{{ user()?.email }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Name</span>
+          <span class="value">{{ user()?.displayName || 'Not set' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Roles</span>
+          <div class="tags">
+            @for (role of user()?.roles; track role) {
+              <span class="tag role-tag">{{ role }}</span>
+            }
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="label">Permissions</span>
+          <div class="tags">
+            @for (permission of user()?.permissions; track permission) {
+              <span class="tag permission-tag">{{ permission }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="protected-routes">
+      <h2>Protected Routes Demo</h2>
+      <p>Try navigating to these routes to see guards in action:</p>
+
+      <div class="route-cards">
+        <div class="route-card">
+          <h3>📊 Dashboard</h3>
+          <p>Requires: Authentication</p>
+          <span class="badge success">✓ Accessible</span>
+        </div>
+
+        <div class="route-card">
+          <h3>👤 Profile</h3>
+          <p>Requires: Authentication</p>
+          <a routerLink="/profile" class="btn btn-small">Visit →</a>
+        </div>
+
+        <div class="route-card">
+          <h3>🔧 Admin Panel</h3>
+          <p>Requires: admin role</p>
+          @if (authService.hasRole('admin')) {
+            <a routerLink="/admin" class="btn btn-small">Visit →</a>
+          } @else {
+            <span class="badge warning">🔒 No Access</span>
+          }
+        </div>
+
+        <div class="route-card">
+          <h3>🛡️ Moderator Panel</h3>
+          <p>Requires: admin OR moderator role</p>
+          @if (authService.hasAnyRole(['admin', 'moderator'])) {
+            <a routerLink="/moderator" class="btn btn-small">Visit →</a>
+          } @else {
+            <span class="badge warning">🔒 No Access</span>
+          }
+        </div>
+
+        <div class="route-card">
+          <h3>⚙️ Settings</h3>
+          <p>Requires: write permission</p>
+          @if (authService.hasPermission('write')) {
+            <a routerLink="/settings" class="btn btn-small">Visit →</a>
+          } @else {
+            <span class="badge warning">🔒 No Access</span>
+          }
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

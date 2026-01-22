@@ -1,0 +1,37 @@
+<div class="mod-container">
+  <nav class="breadcrumb">
+    <a routerLink="/dashboard">Dashboard</a> / <span>Moderator Panel</span>
+  </nav>
+
+  <h1>🛡️ Moderator Panel</h1>
+  <p class="description">
+    This page is accessible to users with <code>admin</code> OR <code>moderator</code> role.
+  </p>
+
+  <div class="mod-actions">
+    <div class="mod-card">
+      <h3>🚫 Content Moderation</h3>
+      <p>Review and moderate user-generated content.</p>
+      <button class="btn btn-action">Review Queue (23)</button>
+    </div>
+    <div class="mod-card">
+      <h3>🔔 Reports</h3>
+      <p>Handle user reports and violations.</p>
+      <button class="btn btn-action">View Reports (7)</button>
+    </div>
+    <div class="mod-card">
+      <h3>💬 Comments</h3>
+      <p>Manage and moderate comments.</p>
+      <button class="btn btn-action">Manage Comments</button>
+    </div>
+  </div>
+
+  <div class="guard-info">
+    <h2>Guard Configuration</h2>
+    <pre><code>{{ guardCode }}</code></pre>
+  </div>
+
+  <div class="actions">
+    <a routerLink="/dashboard" class="btn">← Back to Dashboard</a>
+  </div>
+</div>
